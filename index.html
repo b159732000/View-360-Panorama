@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>Made by James Lu with Three.js</h1>
+    <div id="h1container"><h1>Made by James Lu with Three.js</h1></div>
     <!-- <h2>2019.03.29</h2> -->
     <div id="demo">
         <div id="log"></div>
@@ -36,8 +36,10 @@
                 onMouseDownMouseY = 0,
                 onMouseDownLon = 0,
                 onMouseDownLat = 0,
-                width = 1440, // int || window.innerWidth
-                height = 650, // int || window.innerHeight
+                width = window.innerWidth, // int || window.innerWidth
+                height = window.innerHeight, // int || window.innerHeight
+                // width = 1440, // int || window.innerWidth
+                // height = 650, // int || window.innerHeight
                 ratio = width / height;
             var texture = THREE.ImageUtils.loadTexture('./img/spherical_texture.jpg', new THREE.UVMapping(),
             function () {
@@ -46,11 +48,16 @@
             });
 
             function init() {
+
+                // 建立相機及場景
                 camera = new THREE.PerspectiveCamera(fov, ratio, 1, 1000);
                 scene = new THREE.Scene();
+
+                // 建立物體形狀及表面渲染
                 var mesh = new THREE.Mesh(new THREE.SphereGeometry(500, 60, 40), new THREE.MeshBasicMaterial({
                     map: texture
                 }));
+
                 mesh.scale.x = -1;
                 scene.add(mesh);
                 renderer = new THREE.WebGLRenderer({
@@ -62,12 +69,13 @@
                 element.addEventListener('mousewheel', onDocumentMouseWheel, false);
                 element.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
                 window.addEventListener('resize', onWindowResized, false);
-                onWindowResized(null);
+                onWindowResized(onWindowResized);
             }
 
+            // 在調整視窗大小後，重新渲染及架設相機
             function onWindowResized(event) {
-                //    renderer.setSize(window.innerWidth, window.innerHeight);
-                //    camera.projectionMatrix.makePerspective(fov, window.innerWidth / window.innerHeight, 1, 1100);
+                // renderer.setSize(window.innerWidth, window.innerHeight);
+                // camera.projectionMatrix.makePerspective(fov, window.innerWidth / window.innerHeight, 1, 1100);
                 renderer.setSize(width, height);
                 camera.projectionMatrix.makePerspective(fov, ratio, 1, 1100);
             }

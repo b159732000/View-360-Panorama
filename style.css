@@ -1,7 +1,24 @@
+#h1container {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+h1 {
+    /* position: fixed; */
+    /* top: 0; */
+    /* z-index: 2; */
+    color: white;
+    text-align: center;
+}
+
 html {
     margin: 0;
     padding: 0;
     text-align: center;
+    overflow-x: hidden;
 }
 
 body {
@@ -13,7 +30,9 @@ body {
     margin: 0 auto;
     padding: 0;
     display: inline-block;
-    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    /* max-width: 1440px; */
     overflow-x: hidden;
 }
 
@@ -24,8 +43,8 @@ a {
 #demo {
     /* comment for fixed dimentsions */
     position: relative;
-    width: 1440px;
-    height: 650px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
     overflow: hidden;
     cursor: move;
