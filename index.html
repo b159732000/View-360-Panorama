@@ -67,6 +67,8 @@
                 element.appendChild(renderer.domElement);
                 element.addEventListener('mousedown', onDocumentMouseDown, false);
                 element.addEventListener('mousewheel', onDocumentMouseWheel, false);
+                element.addEventListener('touchstart', onDocumentMouseDown, false);
+                element.addEventListener('touchmove', onDocumentMouseWheel, false);
                 element.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
                 window.addEventListener('resize', onWindowResized, false);
                 onWindowResized(onWindowResized);
