@@ -5,7 +5,7 @@
     "threejs": "r68"
   },
   "authors": [
-    "Norik Davtian <norik@bigemployee.com>"
+    "James Lu<b159732000@gmail.com>"
   ],
   "description": "A panoramic experiment with ThreeJS to visualize a 360 tour with controls",
   "main": "index.html",

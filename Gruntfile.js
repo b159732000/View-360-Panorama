@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         files: ['index.html','js/main.js'],
       },
       js:{
-        files: ['js/main.js'],
+        files: ['./js/main.js'],
         tasks: ['uglify:demo']
       }
     },
@@ -25,8 +25,8 @@ module.exports = function(grunt) {
         beautify: true
       },
       demo: {
-        src: ['js/main.js'],
-        dest: 'js/main.min.js'
+        src: ['./js/main.js'],
+        dest: './js/main.min.js'
       }
     }
   });
