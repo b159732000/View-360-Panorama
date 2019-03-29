@@ -143,9 +143,12 @@
                         camera.position.x = 100 * Math.sin(phi) * Math.cos(theta);
                         camera.position.y = 100 * Math.cos(phi);
                         camera.position.z = 100 * Math.sin(phi) * Math.sin(theta);
-                        var log = ("x: " + camera.position.x);
-                        log = log + ("<br/>y: " + camera.position.y);
-                        log = log + ("<br/>z: " + camera.position.z);
+                        var log = ("x: " + Math.round(camera.position.x * 1000000000000)/1000000000000);
+                        log = log + ("<br/>y: " + Math.round(camera.position.y * 1000000000000)/1000000000000);
+                        log = log + ("<br/>z: " + Math.round(camera.position.z * 1000000000000)/1000000000000);
+                        // var log = ("x: " + camera.position.x);
+                        // log = log + ("<br/>y: " + camera.position.y);
+                        // log = log + ("<br/>z: " + camera.position.z);
                         log = log + ("<br/>fov: " + fov);
                         document.getElementById('log').innerHTML = log;
                         camera.lookAt(scene.position);
